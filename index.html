@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sorteos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Firebase CDN -->
+  <script defer src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <!-- App -->
+  <script defer src="js/firebase.js"></script>
+  <script defer src="js/utils.js"></script>
+  <script defer src="js/sorteos.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1>🎉 Sorteos</h1>
+    <nav>
+      <a id="admin-link" href="admin.html" class="btn primary hidden">Panel</a>
+      <a id="login-link" href="login.html" class="btn">Acceso</a>
+      <button id="logout-btn" class="btn danger hidden">Cerrar sesión</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="toolbar">
+      <label>
+        <input type="checkbox" id="toggle-finalizados" />
+        Mostrar finalizados
+      </label>
+    </section>
+
+    <h2>Activos</h2>
+    <div id="sorteos-activos" class="cards"></div>
+
+    <div id="finalizados-wrapper" class="hidden">
+      <h2>Finalizados</h2>
+      <div id="sorteos-finalizados" class="cards"></div>
+    </div>
+  </main>
+</body>
+</html>

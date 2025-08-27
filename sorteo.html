@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sorteo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Firebase -->
+  <script defer src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <!-- App -->
+  <script defer src="js/firebase.js"></script>
+  <script defer src="js/utils.js"></script>
+  <script defer src="js/sorteo.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="btn" href="index.html">⬅ Volver</a>
+    <div class="grow"></div>
+    <a id="admin-link" href="admin.html" class="btn primary hidden">Panel</a>
+    <a id="login-link" href="login.html" class="btn">Acceso</a>
+    <button id="logout-btn" class="btn danger hidden">Cerrar sesión</button>
+  </header>
+
+  <main class="container">
+    <section class="sorteo-header">
+      <img id="sorteo-imagen" src="assets/default.png" alt="Imagen Sorteo" />
+      <div>
+        <h1 id="sorteo-titulo">Sorteo</h1>
+        <p id="sorteo-descripcion"></p>
+        <p><strong>Precio nº:</strong> <span id="sorteo-precio"></span> €</p>
+        <p><strong>Bizum:</strong> <a id="sorteo-tlf" href="#" target="_blank"></a></p>
+        <p id="sorteo-fechas" class="muted"></p>
+        <p id="sorteo-estado" class="badge"></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Números</h2>
+      <div id="numeros-grid" class="grid"></div>
+      <div class="legend">
+        <span class="chip libre">Libre</span>
+        <span class="chip reservado">Reservado</span>
+        <span class="chip asignado">Asignado</span>
+        <span class="chip pagado">Pagado</span>
+        <span class="chip propio">Tuyo</span>
+      </div>
+    </section>
+
+    <section class="actions">
+      <input type="text" id="nombre-participante" placeholder="Tu nombre para asignar" />
+      <button id="asignar-btn" class="btn primary">Asignar seleccionados</button>
+      <button id="desasignar-btn" class="btn">Desasignar seleccionados</button>
+      <button id="limpiar-seleccion-btn" class="btn ghost">Limpiar selección</button>
+      <p id="msg" class="muted"></p>
+    </section>
+
+    <section id="admin-tools" class="hidden">
+      <h3>Atajos admin</h3>
+      <p>Haz <strong>doble clic</strong> en un número asignado para <em>marcar/desmarcar pagado</em>.</p>
+    </section>
+  </main>
+</body>
+</html>

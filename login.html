@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Acceso</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Firebase -->
+  <script defer src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <!-- App -->
+  <script defer src="js/firebase.js"></script>
+  <script defer src="js/auth.js"></script>
+</head>
+<body>
+  <main class="container small">
+    <h1>Acceso creadores</h1>
+    <form id="login-form" class="card">
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Contraseña" required />
+      <button type="submit" class="btn primary">Entrar</button>
+      <p id="login-msg" class="error"></p>
+    </form>
+  </main>
+</body>
+</html>
